@@ -27,6 +27,7 @@ public final class FrontServlet extends HttpServlet {
     App app = (App) getServletContext().getAttribute("app");
     String path = req.getServletPath() + (req.getPathInfo() == null ? "" : req.getPathInfo());
     if (path.isEmpty()) path = "/";
+    if (path.equals("/home")) path = "/";
     Identity identity = (Identity) req.getAttribute("identity");
     try {
       if (path.startsWith("/media/")) {

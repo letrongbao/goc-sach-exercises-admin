@@ -31,6 +31,7 @@ public final class PreviewServer {
                   throw new IllegalStateException("Preview does not deliver email");
                 }));
     context.getServletContext().setAttribute("preview", true);
+    context.getServletContext().setAttribute("bookstore.test", true);
     Runtime.getRuntime()
         .addShutdownHook(
             new Thread(

@@ -1,5 +1,7 @@
 # Bài tập Lập trình Web
 
+Ứng dụng chạy trên Spring Boot 4.0.0, Java 21, JSP/JSTL, SiteMesh 3 và PostgreSQL.
+
 Sinh viên: Lê Trọng Bảo
 
 MSSV: 22110106
@@ -15,6 +17,8 @@ MSSV: 22110106
 - Bài 05: hoàn thiện CRUD Category/User trong khu vực admin, tìm kiếm và phân trang.
 
 ## Route và luồng xử lý
+
+Spring Boot khởi động từ `vn.edu.utex.bookstore.config.BookstoreApplication`. Ứng dụng vẫn đóng gói dạng WAR để chạy được trên Tomcat; các servlet legacy, JSP và SiteMesh được giữ lại làm lớp web của dự án.
 
 ### Route công khai
 

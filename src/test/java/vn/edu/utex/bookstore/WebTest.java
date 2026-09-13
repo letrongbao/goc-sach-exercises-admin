@@ -61,6 +61,7 @@ class WebTest {
     context
         .getServletContext()
         .setAttribute("app", new App(new Settings(props), store, clock, mail));
+    context.getServletContext().setAttribute("bookstore.test", true);
     tomcat.start();
     base = "http://127.0.0.1:" + tomcat.getConnector().getLocalPort() + "/bookstore";
     client =

@@ -86,6 +86,7 @@ class LiveAcceptanceTest {
       var context = tomcat.addWebapp("/bookstore", Path.of("src/main/webapp").toAbsolutePath().toString());
       context.setParentClassLoader(getClass().getClassLoader());
       context.getServletContext().setAttribute("app", app);
+      context.getServletContext().setAttribute("bookstore.test", true);
       tomcat.start();
       String base = "http://127.0.0.1:" + tomcat.getConnector().getLocalPort() + "/bookstore";
       var client = HttpClient.newHttpClient();
