@@ -1,0 +1,4 @@
+/* Windows Georgia fallback can separate Vietnamese stacked diacritics. */
+.brand, h1, h2, h3, .cover, .typographic-cover span, .auth-story blockquote {
+    font-family: "Times New Roman", Times, serif;
+}

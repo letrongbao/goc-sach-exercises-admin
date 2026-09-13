@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence/orm https://jakarta.ee/xml/ns/persistence/orm/orm_3_1.xsd" version="3.1">
+  <entity class="vn.edu.utex.bookstore.auth.User" access="FIELD"><table name="users"/><attributes>
+    <id name="id"><generated-value strategy="IDENTITY"/></id>
+    <basic name="username"><column name="username" length="50" nullable="false" unique="true"/></basic>
+    <basic name="email"><column name="email" length="254" nullable="false" unique="true"/></basic>
+    <basic name="passwordHash"><column name="password_hash" length="100" nullable="false"/></basic>
+    <basic name="role"><column name="role" length="20" nullable="false"/></basic>
+    <basic name="fullName"><column name="full_name" length="100" nullable="false"/></basic>
+    <basic name="phone"><column name="phone" length="13" nullable="false"/></basic>
+    <basic name="image"><column name="image" length="1000" nullable="false"/></basic>
+    <basic name="active"><column name="active" nullable="false"/></basic>
+    <basic name="authVersion"><column name="auth_version" nullable="false"/></basic>
+    <basic name="createdAt"><column name="created_at" nullable="false"/></basic>
+  </attributes></entity>
+  <entity class="vn.edu.utex.bookstore.category.Category" access="FIELD"><table name="categories"/><attributes>
+    <id name="id"><generated-value strategy="IDENTITY"/></id>
+    <basic name="name"><column name="name" length="100" nullable="false" unique="true"/></basic>
+    <basic name="image"><column name="image" length="1000" nullable="false"/></basic>
+    <basic name="active"><column name="active" nullable="false"/></basic>
+  </attributes></entity>
+  <entity class="vn.edu.utex.bookstore.auth.RememberToken" access="FIELD"><table name="remember_tokens"/><attributes>
+    <id name="tokenHash"><column name="token_hash" length="64"/></id>
+    <basic name="userId"><column name="user_id" nullable="false"/></basic>
+    <basic name="expiresAt"><column name="expires_at" nullable="false"/></basic>
+  </attributes></entity>
+  <entity class="vn.edu.utex.bookstore.auth.OtpChallenge" access="FIELD"><table name="otp_challenges"/><attributes>
+    <id name="id"><column name="id" length="36"/></id>
+    <basic name="userId"><column name="user_id" nullable="false"/></basic>
+    <basic name="purpose"><column name="purpose" length="20" nullable="false"/></basic>
+    <basic name="otpHash"><column name="otp_hash" length="64" nullable="false"/></basic>
+    <basic name="sentAt"><column name="sent_at" nullable="false"/></basic>
+    <basic name="expiresAt"><column name="expires_at" nullable="false"/></basic>
+    <basic name="attempts"><column name="attempts" nullable="false"/></basic>
+    <basic name="consumed"><column name="consumed" nullable="false"/></basic>
+    <basic name="delivered"><column name="delivered" nullable="false"/></basic>
+  </attributes></entity>
+  <entity class="vn.edu.utex.bookstore.product.Product" access="FIELD"><table name="products"/><attributes>
+    <id name="id"><generated-value strategy="IDENTITY"/></id>
+    <basic name="title"><column name="title" length="200" nullable="false"/></basic>
+    <basic name="author"><column name="author" length="150" nullable="false"/></basic>
+    <basic name="description"><column name="description" length="10000" nullable="false"/></basic>
+    <basic name="price"><column name="price" precision="12" scale="2" nullable="false"/></basic>
+    <basic name="stock"><column name="stock" nullable="false"/></basic>
+    <basic name="image"><column name="image" length="1000" nullable="false"/></basic>
+    <basic name="createdAt"><column name="created_at" nullable="false"/></basic>
+    <basic name="updatedAt"><column name="updated_at" nullable="false"/></basic>
+    <many-to-one name="category" fetch="LAZY" optional="false"><join-column name="category_id" nullable="false"/></many-to-one>
+  </attributes></entity>
+</entity-mappings>

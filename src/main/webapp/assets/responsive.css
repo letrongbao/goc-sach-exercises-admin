@@ -1,0 +1,41 @@
+/* Keep decorative covers bounded; full titles remain below each cover. */
+.typographic-cover {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 8px;
+  min-width: 0;
+  overflow: hidden;
+}
+.typographic-cover small { line-height: 1.3; }
+.typographic-cover span {
+  align-self: center;
+  min-height: 0;
+  max-height: 100%;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+.typographic-cover em {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.book-card h3, .book-author, .detail-info h1, .description {
+  overflow-wrap: anywhere;
+}
+.detail-info { min-width: 0; }
+.auth-narrow .form-card h1 { font-size: 35px; margin-bottom: 24px; }
+@media (max-width: 380px) {
+  .book-grid, .home-books .book-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 260px;
+    margin-inline: auto;
+  }
+  .book-art { padding: 22px; }
+  .typographic-cover span, .home-books .typographic-cover span { font-size: 25px; }
+  .detail-art .typographic-cover span { font-size: 34px; }
+  .auth-narrow .form-card h1 { font-size: 30px; }
+}

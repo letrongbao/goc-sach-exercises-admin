@@ -1,0 +1,6 @@
+<sitemesh>
+  <mapping path="/*" decorator="bootstrap.jsp"/>
+  <mapping path="/assets/*" exclude="true"/>
+  <mapping path="/media/*" exclude="true"/>
+  <mapping path="/error" exclude="true"/>
+</sitemesh>

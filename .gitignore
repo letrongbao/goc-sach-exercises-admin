@@ -1,0 +1,11 @@
+/target/
+/.tools/
+/submissions/
+/config/*.properties
+!/config/*.example.properties
+/.idea/
+/.vscode/
+*.log
+*.iml
+.env
+/uploads/
