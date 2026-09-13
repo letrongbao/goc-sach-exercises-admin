@@ -15,7 +15,8 @@
   <servlet><servlet-name>front</servlet-name><servlet-class>vn.edu.utex.bookstore.web.FrontServlet</servlet-class>
     <multipart-config><max-file-size>5242880</max-file-size><max-request-size>6291456</max-request-size><file-size-threshold>1048576</file-size-threshold></multipart-config>
   </servlet>
-  <servlet-mapping><servlet-name>front</servlet-name><url-pattern></url-pattern><url-pattern>/auth/*</url-pattern><url-pattern>/admin/*</url-pattern><url-pattern>/media/*</url-pattern></servlet-mapping>
+  <servlet-mapping><servlet-name>front</servlet-name><url-pattern>/</url-pattern><url-pattern>/auth/*</url-pattern><url-pattern>/admin/*</url-pattern><url-pattern>/media/*</url-pattern></servlet-mapping>
+  <servlet-mapping><servlet-name>default</servlet-name><url-pattern>/assets/*</url-pattern></servlet-mapping>
   <servlet><servlet-name>error</servlet-name><servlet-class>vn.edu.utex.bookstore.web.ErrorServlet</servlet-class></servlet>
   <servlet-mapping><servlet-name>error</servlet-name><url-pattern>/error</url-pattern></servlet-mapping>
   <session-config><session-timeout>30</session-timeout><cookie-config><http-only>true</http-only></cookie-config><tracking-mode>COOKIE</tracking-mode></session-config>

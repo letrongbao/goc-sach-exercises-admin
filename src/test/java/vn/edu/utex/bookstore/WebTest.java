@@ -98,7 +98,7 @@ class WebTest {
     var home = get("/");
     assertEquals(200, home.statusCode(), home.body());
     assertTrue(home.body().contains("góc"));
-    assertTrue(home.body().contains("<title>Trang chủ · Góc Sách</title>"));
+    assertTrue(home.body().matches("(?s).*<title>\\s*Trang chủ · Góc Sách\\s*</title>.*"));
     assertEquals(1, java.util.regex.Pattern.compile("class=\"topline\"").matcher(home.body()).results().count());
     assertFalse(home.body().contains("sitemesh:write"));
     var login = get("/auth/login");

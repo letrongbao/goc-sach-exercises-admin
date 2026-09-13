@@ -6,7 +6,9 @@
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title><sitemesh:write property="title" /></title>
+      <title>
+        <c:out value="${pageTitle}" /> · Góc Sách
+      </title>
       <link rel="stylesheet" href="<c:url value='/assets/bootstrap.min.css'/>">
       <link rel="stylesheet" href="<c:url value='/assets/app.css'/>">
       <link rel="stylesheet" href="<c:url value='/assets/typography.css'/>">

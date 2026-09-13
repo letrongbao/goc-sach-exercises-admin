@@ -1,7 +1,6 @@
 # Bài tập Lập trình Web
 
 Ứng dụng chạy trên Spring Boot 4.0.0, Java 21, JSP/JSTL, SiteMesh 3 và PostgreSQL.
-
 Sinh viên: Lê Trọng Bảo
 
 MSSV: 22110106
